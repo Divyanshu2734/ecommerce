@@ -1,0 +1,71 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    contact
+    {% endblock title %}
+
+    {% block body %}
+    
+    <br>
+    <br>
+    <div class="container mt=6  ">
+      <div class="row">
+        
+        <div class="col md-4">
+          
+          <div class="card bg-light " style="width: 40rem; height:30rem border-radius: 100px;"><div class="card-body">{% include "msg.html" %}
+            <h2>Contact us</h2>
+          <form action="/contact/" method="post">{% csrf_token %}
+          <div class="form-row">
+            <div class="form-group ">
+             
+              <div class="col">
+                  <div class="row">
+                    <div class="col fa-solid fa-user">
+                     <input type="text" class="form-control " placeholder="First name" name="fname">
+                    </div>
+                    <div class="col fa-solid fa-user-plus">
+                      <input type="text" class="form-control" placeholder="Last name" name="lname">
+                    </div>
+                  <br>
+                  
+                  <div class="col">
+                     
+                          
+                    </div>
+                <div class="form-group">
+              <label for="inputEmail4"><i class="fa-solid fa-envelope"></i>Email</label>
+              <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email"  value="{{user.email}}" required>
+            </div>
+                <div class="form-group">
+              <label for="inputEmail4"><i class="fa-solid fa-phone"></i>Mobile no</label>
+              <input type="number" class="form-control" id="inputEmail4" placeholder="number" name="phone" >
+            </div>
+            <div class="form-group ">
+              <label for="inputPassword4"><i class="fa-solid fa-house"></i>Address</label>
+              <input type="text" class="form-control" id="inputPassword4" placeholder="" name="address">
+            </div>
+            <div class="form-group ">
+             
+            </div>
+          </div>
+          <div class="form-group"> 
+            <label for="discription"><i class="fa-solid fa-pen-nib"></i>How Can I Help You?</label>
+           <div><textarea name="discription" id="" cols="65" rows="5"></textarea></div> 
+          </div>
+         <br>
+        
+          <button type="submit" class="btn btn-danger ">Sign in</button>
+        </form>
+      </div></div>
+     
+      </div>
+    </div>
+    <br>
+
+    {% endblock body %}
+    
+
+
